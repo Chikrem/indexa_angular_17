@@ -7,6 +7,7 @@ import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component'
 import { ContainerComponent } from './componentes/container/container.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContatoComponent } from './componentes/contato/contato.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
