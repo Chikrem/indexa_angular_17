@@ -9,6 +9,7 @@ import { SeparadorComponent } from './componentes/separador/separador.component'
 import { ContatoComponent } from './componentes/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioContatoComponent } from './paginas/formulario-contato/formulario-contato.component';
+import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormularioContatoComponent } from './paginas/formulario-contato/formula
     ContainerComponent,
     SeparadorComponent,
     ContatoComponent,
-    FormularioContatoComponent
+    FormularioContatoComponent,
+    ListaContatosComponent
   ],
   imports: [
     BrowserModule,
