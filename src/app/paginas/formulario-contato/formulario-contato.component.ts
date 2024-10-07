@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,34 +6,38 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
 })
-export class FormularioContatoComponent {
+export class FormularioContatoComponent implements OnInit {
 
-  contatoForm: FormGroup;
+  contatoForm!: FormGroup;
 
-  constructor() {
+  ngOnInit(): void {
+    this.inicializarFormulario()
+  }
+
+  inicializarFormulario() {
     this.contatoForm = new FormGroup({
-        nome: new FormControl('', Validators.required),
-        telefone: new FormControl('', Validators.required),
-        email: new FormControl('', [Validators.required, Validators.email]),
-        aniversario: new FormControl(''),
-        redes: new FormControl(''),
-        observacoes: new FormControl('')
+      nome: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      aniversario: new FormControl(''),
+      redes: new FormControl(''),
+      observacoes: new FormControl('')
     })
-}
+  }
 
-salvarContato() {
+  salvarContato() {
     console.log("Formulário válido, valores:", this.contatoForm.value);
-}
+  }
 
-// salvarContato() {
-//   if (this.contatoForm.valid) {
-//     console.log("Formulário válido, valores:", this.contatoForm.value);
-//   } else {
-//     console.log("Formulário inválido!");
-//   }
-// }
+  // salvarContato() {
+  //   if (this.contatoForm.valid) {
+  //     console.log("Formulário válido, valores:", this.contatoForm.value);
+  //   } else {
+  //     console.log("Formulário inválido!");
+  //   }
+  // }
 
-  cancelar(){
+  cancelar() {
     console.log("Formulário cancelado!");
   }
 
