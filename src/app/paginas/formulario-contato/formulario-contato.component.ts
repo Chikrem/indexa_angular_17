@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ContatoService } from '../../services/contato.service';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-formulario-contato',
@@ -29,12 +30,22 @@ export class FormularioContatoComponent implements OnInit {
     })
   }
 
+  // Modificando para subscriber no Observable
+
   salvarContato() {
     const novoContato = this.contatoForm.value;
-    this.contatoService.salvarContato(novoContato);
-    this.contatoForm.reset;
-    this.router.navigateByUrl('/lista-contatos')
+    this.contatoService.salvarContato(novoContato).subscribe(() => {
+      this.contatoForm.reset;
+      this.router.navigateByUrl('/lista-contatos')
+    });
   }
+
+  // salvarContato() {
+  //   const novoContato = this.contatoForm.value;
+  //   this.contatoService.salvarContato(novoContato);
+  //   this.contatoForm.reset;
+  //   this.router.navigateByUrl('/lista-contatos')
+  // }
 
   // salvarContato() {
   //   if (this.contatoForm.valid) {

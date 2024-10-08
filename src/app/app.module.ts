@@ -10,6 +10,8 @@ import { ContatoComponent } from './componentes/contato/contato.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioContatoComponent } from './paginas/formulario-contato/formulario-contato.component';
 import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.component';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { PerfilContatoComponent } from './paginas/perfil-contato/perfil-contato.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.
     SeparadorComponent,
     ContatoComponent,
     FormularioContatoComponent,
-    ListaContatosComponent
+    ListaContatosComponent,
+    PerfilContatoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,7 @@ import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
