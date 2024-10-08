@@ -12,31 +12,31 @@
   Two-way Binding ([(ngModel)]="propriedade"): combina Property e Event Binding para criar uma via de mão dupla entre a classe e o template.
    -->
 
-  <input
-    type="search"
-    placeholder="Digite para buscar"
-    [(ngModel)]="filtroPorTexto"
-  />
 
-  <section class="adicionar-contato">
-    <button routerLink="/formulario">
-      <img src="assets/plus.png" alt="">
-      <span>Adicionar contato</span>
-    </button>
-  </section>
+    <input
+      type="search"
+      placeholder="Digite para buscar"
+      [(ngModel)]="filtroPorTexto"
+    />
 
-  <ng-container *ngFor="let letra of alfabeto; trackBy: trackByLetra">
-    <app-separador>
-      {{ letra }}
-    </app-separador>
+    <section class="adicionar-contato">
+      <button routerLink="/formulario">
+        <img src="assets/plus.png" alt="">
+        <span>Adicionar contato</span>
+      </button>
+    </section>
 
-    <ng-container *ngFor="let contato of filtrarContatosPorLetraInicial(letra); trackBy: trackByContatoId">
-      <app-contato
-        [nome]="contato.nome"
-        [telefone]="contato.telefone"
-        [id]="contato.id!">
-      </app-contato>
-    </ng-container>
-  </ng-container>
-
-</app-container>
+    @for (letra of alfabeto; track letra) {
+      <app-separador>
+        {{ letra }}
+      </app-separador>
+      @for (contato of filtrarContatosPorLetraInicial(letra); track contato.id) {
+        <app-contato
+          [nome]="contato.nome"
+          [telefone]="contato.telefone"
+          [id]="contato.id!"
+          [avatar]="contato.avatar">
+        </app-contato>
+      }
+    }
+  </app-container>

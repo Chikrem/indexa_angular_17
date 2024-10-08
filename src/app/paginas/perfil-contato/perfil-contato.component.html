@@ -2,11 +2,13 @@
   <header>
     <section class="cabecalho-link">
       <img src="assets/logo.png" alt="">
+      <div>
+        <button>
+          <img class="seta" src="assets/arrow-left.png" alt="">
+          <a routerLink="/lista-contatos">Voltar</a>
+        </button>
+      </div>
     </section>
-    <a routerLink="" class="cabecalho-arrow">
-      <img src="assets/arrow-left.png" alt="">
-      <a>Voltar</a>
-    </a>
     <section class="cabecalho-contato">
       <img src="assets/perfil-contato.png" alt="">
       <h1>Perfil do contato</h1>
@@ -14,6 +16,11 @@
   </header>
 
   <section class="perfil">
+    <div class="imagem-perfil">
+      <img [src]="contato.avatar" alt="Avatar do contato">
+      <h2><strong>{{ contato.nome }}</strong></h2>
+    </div>
+    <app-separador></app-separador>
     <ul>
       <li>
         <i class="material-icons">call</i>
@@ -37,7 +44,7 @@
       <li>{{ contato.redes }}</li>
     </ul>
     <div class="botoes">
-      <button class="botao-excluir">
+      <button (click)="excluir()" class="botao-excluir">
         Excluir contato
       </button>
       <button class="botao-editar">

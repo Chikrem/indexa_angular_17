@@ -1,12 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import agenda from '../../agenda.json'
+// import agenda from '../../agenda.json'
 import { ContatoService } from './../../services/contato.service';
+import { Contato } from '../../componentes/contato/contato';
 
-interface Contato{
-  id: number
-  nome: string
-  telefone: string
-}
+
 
 @Component({
   selector: 'app-lista-contatos',
