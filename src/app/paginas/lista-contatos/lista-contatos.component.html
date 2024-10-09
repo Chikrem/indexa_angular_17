@@ -1,6 +1,10 @@
 <app-container>
 
-  <app-cabecalho></app-cabecalho>
+  <app-cabecalho
+  [telaInicial]="true"
+  [bannerSrc]="'assets/banner.png'"
+  [titulo]="'Organize, conecte, simplifique!'">
+  </app-cabecalho>
 
   <!--
   Interpolação ({{ valor }}): usa-se para exibir propriedades da classe do componente no template.

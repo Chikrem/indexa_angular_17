@@ -12,6 +12,7 @@ import { FormularioContatoComponent } from './paginas/formulario-contato/formula
 import { ListaContatosComponent } from './paginas/lista-contatos/lista-contatos.component';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { PerfilContatoComponent } from './paginas/perfil-contato/perfil-contato.component';
+import { MensagemErroComponent } from './componentes/mensagem-erro/mensagem-erro.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PerfilContatoComponent } from './paginas/perfil-contato/perfil-contato.
     ContatoComponent,
     FormularioContatoComponent,
     ListaContatosComponent,
-    PerfilContatoComponent
+    PerfilContatoComponent,
+    MensagemErroComponent
   ],
   imports: [
     BrowserModule,
